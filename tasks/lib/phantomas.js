@@ -352,7 +352,8 @@ Phantomas.prototype.formResult = function( results ) {
         fulfilledPromise = _.filter( results, function( promise ) {
           return promise.isFulfilled();
         } ),
-        fulFilledMetrics = fulfilledPromise.length && fulfilledPromise[ 0 ].value().json.metrics,
+        metricValues     = fulfilledPromise.length && fulfilledPromise[0].value(),
+        fulFilledMetrics = metricValues.json.metrics,
         entry,
         metric;
 
